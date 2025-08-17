@@ -1,0 +1,8 @@
+{
+	"name": "game-scheduler",
+	"type": "module",
+	"dependencies": {
+		"discord.js": "^14.21.0",
+		"dotenv": "^17.2.1"
+	}
+}
