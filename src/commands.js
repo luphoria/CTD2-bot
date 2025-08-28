@@ -1,14 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
 
-export const allEventTimes = (eventList) => {
-    let eventTimes = {};
-    for (let event in eventList) {
-        eventTimes[event] = eventList[event].timeUnix
-    }
-
-    return eventTimes;
-}
-
 // Seed gen internal utility
 export const genSeed = () => {
     let seed = Math.floor(Math.random()*16777215).toString(16);
