@@ -23,9 +23,7 @@ This bot generates a daily seed and posts it each day.
     * Generates a seed. 
  - !setnext [seed]
     * Changes the next upcoming seed to a fixed one.
- - !help
-    * Destroys the world and everything living within it.
-  * Command format: \`!help\``);
+`);
                     break;
                 case "!seed":
                     res = Seed(message.author.id);
