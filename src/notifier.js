@@ -21,7 +21,7 @@ const CTDNextSeed = () => {
     setTimeout(() => {
         console.log(`${Date.now()}: Sending seed for the day`)
         CTDNextSeed();
-    }, 20000/*86400000*/) // 24 hours
+    }, 86400000) // 24 hours
 }
 
 export const initTimer = () => {
@@ -40,15 +40,15 @@ export const initTimer = () => {
     let todayOrTomorrow;
     let nextSeedTime;
 
-    if (hour < 21) { // Seed for the day needs to be scheduled
+    if (hour < 19) { // Seed for the day needs to be scheduled
         todayOrTomorrow = "today";
-        nextSeedTime = new Date(`${year}-${month}-${date} 21:00 UTC`);
+        nextSeedTime = new Date(`${year}-${month}-${date} 19:00 UTC`);
     } else { // Schedule the seed for tomorrow
         todayOrTomorrow = "tomorrow";
-        nextSeedTime = new Date(`${year}-${month}-${date + 1} 21:00 UTC`);
+        nextSeedTime = new Date(`${year}-${month}-${date + 1} 19:00 UTC`);
     }
 
-    let notifInMs = -1 // nextSeedTime - Date.now();
+    let notifInMs = nextSeedTime - Date.now();
 
     console.log(`Now: ${nextSeedTime - 0}`);
     console.log(notifInMs);
