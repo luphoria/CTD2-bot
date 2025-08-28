@@ -10,7 +10,8 @@ const CTDNextSeed = () => {
     let seed = db.nextSeed ? db.nextSeed : genSeed();
 
     const channel = client.channels.cache.get(NOTIFY_CHANNEL_ID);
-    channel.send(`# Classic Tetris Daily Seed #${db.seeds.length + 1}: **\`${seed}\`**`);
+    channel.send(`# Classic Tetris Daily Seed #${db.seeds.length + 1}: **\`${seed}\`**
+<@&1407787118767509544>`);
 
     db.nextSeed = null;
     db.seeds.push(seed);
