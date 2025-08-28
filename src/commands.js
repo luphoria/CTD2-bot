@@ -27,7 +27,7 @@ export const Seed = (author) => {
 export const SetNextSeed = (author, seed) => {
     let db = JSON.parse(readFileSync("./db.json").toString());
 
-    if (!db.privilegedUsers.contains(author)) {
+    if (!db.privilegedUsers.includes(author)) {
         return { msg: `No` }
     }
 

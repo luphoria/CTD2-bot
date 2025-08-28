@@ -48,7 +48,7 @@ export const initTimer = () => {
         nextSeedTime = new Date(`${year}-${month}-${date + 1} 21:00 UTC`);
     }
 
-    let notifInMs = nextSeedTime - Date.now();
+    let notifInMs = -1 // nextSeedTime - Date.now();
 
     console.log(`Now: ${nextSeedTime - 0}`);
     console.log(notifInMs);
