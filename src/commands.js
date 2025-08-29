@@ -2,7 +2,11 @@ import { readFileSync, writeFileSync } from "fs";
 
 // Seed gen internal utility
 export const genSeed = () => {
-    let seed = Math.floor(Math.random()*16777215).toString(16);
+    let seed;
+
+    while (seed % 256 < 3) 
+        seed = Math.floor(Math.random()*16777215).toString(16);
+    
     // Seeds should start with 0s if less than 6 digits
     for (let i = 0; i < 6 - seed.length; i++) {
         seed = "0" + seed;
